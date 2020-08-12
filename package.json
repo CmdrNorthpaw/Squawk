@@ -1,0 +1,25 @@
+{
+  "name": "squawk",
+  "version": "1.0.0",
+  "description": "Squawk is a Discord bot that does the one thing Twitter webhooks can't do: Publish your glorious tweets! Or someone else's, y'know, if you want to have a good place to giggle at your conspiracy theorist neighbor. Or whatever.",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CmdrNorthpaw/Squawk.git"
+  },
+  "author": "CmdrNorthpaw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CmdrNorthpaw/Squawk/issues"
+  },
+  "homepage": "https://github.com/CmdrNorthpaw/Squawk#readme"
+}
