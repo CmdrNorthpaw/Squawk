@@ -25,6 +25,17 @@ for (file of command_files) {
 	client.commands.set(command.name, command);
 }
 
+client.on('message', message => {
+    if (!message.content.startswith('sq! ')) return
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
+    
+    if (!client.commands.has(command)) return
+
+    client.commands.get(command).execute(message, args)
+})
+
 function create_embed(tweet_id) {
     const tweet = twitter.get('statuses/show', {id: tweet_id})
     const author = tweet["author"]
