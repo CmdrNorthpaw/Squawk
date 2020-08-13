@@ -10,12 +10,20 @@ const twitter = new Twitter({
 })
 
 
-const client = Discord.client()
+const client = Discord.Client()
 var following = []
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}`)
 })
+
+client.commands = new Discord.Collection()
+const command_files = fs.readdirSync('./commands')
+
+for (file of command_files) {
+    const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
 
 function create_embed(tweet_id) {
     const tweet = twitter.get('statuses/show', {id: tweet_id})
